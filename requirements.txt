@@ -1,0 +1,5 @@
+bs4
+uuid
+pkce
+requests
+setuptools
