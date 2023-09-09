@@ -10,6 +10,10 @@ PayPayをPythonから操作します。<br>
 	* 送金リンクの受け取り 
 	* 送金リンクの作成
 	* アカウント情報の確認
+
+## インストール
+前提として、Gitが必要です。<br>
+インストール: `pip install git+https://github.com/Abyraz0114/PayPy.git`
 	
 ## 使い方
 ### ログイン
@@ -19,19 +23,19 @@ from PayPy import PayPy
 paypay = PayPy()
 
 def login():
-	try:
-		paypay.login_start("PHONE NUMBER", "PASSWORD")
-	except:
-		print("Error")
-		return
-	otp = input("OTP: ")
-	try:
-		result = paypay.login_confirm(otp)
-		token = result["payload"]["accessToken"]
-		print(f"Token: {token}")
-	except:
-		print("Error")
-		return
+  try:
+    paypay.login_start("PHONE NUMBER", "PASSWORD")
+  except:
+    print("Error")
+    return
+  otp = input("OTP: ")
+  try:
+    result = paypay.login_confirm(otp)
+    token = result["payload"]["accessToken"]
+    print(f"Token: {token}")
+  except:
+    print("Error")
+    return
 		
 login()
 ```
